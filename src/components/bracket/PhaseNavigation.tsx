@@ -24,16 +24,6 @@ function PhaseTab({ label, date, count = 0, active, highlight }: PhaseTabProps) 
         )}>
           {label}
         </span>
-        {count > 0 && (
-          <span className={cn(
-            "text-[9px] px-1.5 py-0.5 rounded-full font-black border",
-            active 
-              ? "bg-primary text-white border-primary shadow-sm shadow-primary/20" 
-              : "bg-muted text-muted-foreground border-border"
-          )}>
-            {count}
-          </span>
-        )}
       </div>
       <span className={cn(
         "text-[10px] font-bold tracking-tight",
@@ -49,24 +39,56 @@ function PhaseDivider() {
   return <div className="h-8 w-px bg-border mx-2" />
 }
 
+import { PHASE_CONFIG } from "@/config/competition";
+
 export function PhaseNavigation({ totals }: { totals: Record<string, number> }) {
   return (
     <div className="bg-white border-y border-border sticky top-[80px] z-20 shadow-sm">
       <div className="max-w-[1600px] mx-auto overflow-x-auto no-scrollbar">
         <div className="flex items-center justify-between min-w-[800px] px-8 py-4">
-          <PhaseTab label="Octavos" date="1 de Junio" count={totals.round_of_16} active />
+          <PhaseTab 
+            label={PHASE_CONFIG.round_of_16.label} 
+            date={PHASE_CONFIG.round_of_16.date} 
+            count={totals.round_of_16} 
+            active 
+          />
           <PhaseDivider />
-          <PhaseTab label="Cuartos" date="10 de Junio" count={totals.quarter_finals} />
+          <PhaseTab 
+            label={PHASE_CONFIG.quarter_finals.label} 
+            date={PHASE_CONFIG.quarter_finals.date} 
+            count={totals.quarter_finals} 
+          />
           <PhaseDivider />
-          <PhaseTab label="Semifinal" date="20 de Junio" count={totals.semi_finals} />
+          <PhaseTab 
+            label={PHASE_CONFIG.semi_finals.label} 
+            date={PHASE_CONFIG.semi_finals.date} 
+            count={totals.semi_finals} 
+          />
           <PhaseDivider />
-          <PhaseTab label="FINAL" date="21 de Junio" count={totals.final} highlight />
+          <PhaseTab 
+            label={PHASE_CONFIG.final.label} 
+            date={PHASE_CONFIG.final.date} 
+            count={totals.final} 
+            highlight 
+          />
           <PhaseDivider />
-          <PhaseTab label="Semifinal" date="20 de Junio" count={totals.semi_finals} />
+          <PhaseTab 
+            label={PHASE_CONFIG.semi_finals.label} 
+            date={PHASE_CONFIG.semi_finals.date} 
+            count={totals.semi_finals} 
+          />
           <PhaseDivider />
-          <PhaseTab label="Cuartos" date="10 de Junio" count={totals.quarter_finals} />
+          <PhaseTab 
+            label={PHASE_CONFIG.quarter_finals.label} 
+            date={PHASE_CONFIG.quarter_finals.date} 
+            count={totals.quarter_finals} 
+          />
           <PhaseDivider />
-          <PhaseTab label="Octavos" date="1 de Junio" count={totals.round_of_16} />
+          <PhaseTab 
+            label={PHASE_CONFIG.round_of_16.label} 
+            date={PHASE_CONFIG.round_of_16.date} 
+            count={totals.round_of_16} 
+          />
         </div>
       </div>
     </div>
