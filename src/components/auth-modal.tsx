@@ -104,7 +104,7 @@ export function AuthModal({ open, onOpenChange, onAuthed }: AuthModalProps) {
             </div>
             <div className="space-y-2">
               <Label htmlFor="email" className="text-[11px] uppercase tracking-widest font-black text-secondary/60 ml-1">
-                Correo corporativo
+                Correo
               </Label>
               <Input
                 id="email"
