@@ -29,18 +29,9 @@ export function HeroSection() {
             <span className="text-primary italic">Nutrición Clínica</span>
           </h1>
           
-          <p className="max-w-2xl text-white/70 text-lg sm:text-xl font-medium leading-relaxed mb-10">
+          <p className="max-w-2xl text-white/70 text-lg sm:text-xl font-medium leading-relaxed mb-6">
             {APP_CONFIG.brand.tagline}
           </p>
-
-          <div className="flex gap-4">
-             <Button 
-               onClick={() => document.getElementById('bracket-main')?.scrollIntoView({ behavior: 'smooth' })}
-               className="bg-primary hover:bg-primary/90 text-white font-bold py-6 px-8 rounded-xl shadow-lg shadow-primary/20 transition-all hover:scale-105"
-             >
-               Explorar Especialidades
-             </Button>
-          </div>
         </motion.div>
       </div>
     </section>
