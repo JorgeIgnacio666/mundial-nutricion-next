@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --font-display: "Inter", "system-ui", "-apple-system", "sans-serif";
+  --font-sans: "Inter", "system-ui", "-apple-system", "sans-serif";
 
-@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --shadow-card: 0 1px 2px oklch(0 0 0 / 0.04), 0 8px 24px -12px oklch(0.35 0.04 230 / 0.18);
+  --shadow-elevated: 0 2px 4px oklch(0 0 0 / 0.06), 0 24px 48px -16px oklch(0.35 0.04 230 / 0.22);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.75rem;
+
+  /* #F8F9F9 — Gris muy claro de fondo (Estilo Lovable/Académico) */
+  --background: oklch(0.98 0.005 240);
+  /* #375161 — Azul CELAN como texto base */
+  --foreground: oklch(0.38 0.04 235);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.38 0.04 235);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.38 0.04 235);
+
+  /* #71aa55 — Verde CELAN */
+  --primary: oklch(0.67 0.14 140);
+  --primary-foreground: oklch(1 0 0);
+
+  /* #375161 — Azul CELAN */
+  --secondary: oklch(0.38 0.04 235);
+  --secondary-foreground: oklch(1 0 0);
+
+  --muted: oklch(0.95 0.005 240);
+  --muted-foreground: oklch(0.55 0.03 235);
+
+  /* #fed357 — Mostaza CELAN (Uso muy sutil) */
+  --accent: oklch(0.86 0.14 90);
+  --accent-foreground: oklch(0.38 0.04 235);
+
+  --destructive: oklch(0.5 0.15 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.92 0.01 240);
+  --input: oklch(0.92 0.01 240);
+  --ring: oklch(0.67 0.14 140);
+}
+
+@layer base {
+  * {
+    @apply border-border;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    @apply font-bold tracking-tight;
+  }
 }
