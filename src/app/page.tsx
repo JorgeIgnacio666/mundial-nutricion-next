@@ -414,7 +414,6 @@ function CenterColumn({ finalMatch, tally, isOpen, onVote }: any) {
         <div className="relative mx-auto h-24 w-24 lg:h-32 lg:w-32 rounded-full bg-white flex items-center justify-center shadow-elevated border border-border/50">
           <Trophy className="h-12 w-12 lg:h-16 lg:w-16 text-primary" />
         </div>
-        <div className="mt-4 text-[11px] uppercase tracking-[0.3em] text-primary font-black">Cuerpo de Élite</div>
       </motion.div>
       {finalMatch && (
         <div className="w-full max-w-[240px]">
