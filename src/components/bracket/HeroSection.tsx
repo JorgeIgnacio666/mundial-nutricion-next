@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { APP_CONFIG } from "@/config/competition";
 
 export function HeroSection() {
   return (
@@ -29,8 +30,7 @@ export function HeroSection() {
           </h1>
           
           <p className="max-w-2xl text-white/70 text-lg sm:text-xl font-medium leading-relaxed mb-10">
-            Análisis, criterios clínicos y la voz de la comunidad científica para decidir 
-            la especialidad líder en evidencia basada para 2026.
+            {APP_CONFIG.brand.tagline}
           </p>
 
           <div className="flex gap-4">
