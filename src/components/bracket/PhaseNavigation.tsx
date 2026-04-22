@@ -88,6 +88,7 @@ export function PhaseNavigation({ totals }: { totals: Record<string, number> }) 
             label={PHASE_CONFIG.round_of_16.label} 
             date={PHASE_CONFIG.round_of_16.date} 
             count={totals.round_of_16} 
+            active
           />
         </div>
       </div>
